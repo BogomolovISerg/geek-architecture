@@ -9,7 +9,7 @@ import java.util.Map;
 public class RequestParser{
 
     public HttpRequest parse(Deque<String> raw){
-        String[] tmp = raw.pollFirst().split(regex: " ");
+        String[] tmp = raw.pollFirst().split(" ");
         String m = tmp[0];
         String url = tmp[1];
 
@@ -19,13 +19,19 @@ public class RequestParser{
             if(s.isBlank()){
                 break;
             }
-            String[] header = s.split(regex: ": ");
+            String[] header = s.split(": ");
             headers.put(header[0], header[1]);
         }
         StringBuilder body = new StringBuilder();
         while(!raw.isEmpty()){
             body.append(raw.pollFirst());
         }
-        return new HttpRequest(m,url,headers,body.toString());
+        HttpRequest httpRequest = new HttpRequest.BuilderHttpRequest()
+                .setMetod(m)
+                .setHeaders(headers)
+                .setBody(body.toString())
+                .build();
+
+        return httpRequest;
     }
 }

@@ -8,15 +8,7 @@ public class HttpResponse {
     private Map<String, String> headers;
     private String body;
 
-    public HttpResponse(int status) {
-        this.statusCode = status;
-    }
-
-    public HttpResponse(int status, Map<String, String> headers, String body) {
-        this.statusCode = status;
-        this.headers = headers;
-        this.body = body;
-    }
+    private HttpResponse(){}
 
     public int getStatus() {
         return statusCode;
@@ -24,5 +16,32 @@ public class HttpResponse {
 
     public Map<String, String> getHeaders() {
         return headers;
+    }
+
+    public static class BuilderHttpResponse{
+        private final HttpResponse httpResponse;
+
+        public BuilderHttpResponse(){
+            this.httpResponse = new HttpResponse();
+        }
+
+        public BuilderHttpResponse setStatus(int status) {
+            this.httpResponse.statusCode = status;
+            return this;
+        }
+
+        public BuilderHttpResponse setHeaders(Map<String, String> headers) {
+            this.httpResponse.headers = headers;
+            return this;
+        }
+
+        public BuilderHttpResponse setBody(String body) {
+            this.httpResponse.body = body;
+            return this;
+        }
+
+        public HttpResponse build(){
+            return this.httpResponse;
+        }
     }
 }
