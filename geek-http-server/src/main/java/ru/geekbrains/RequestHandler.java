@@ -20,6 +20,7 @@ public class RequestHandler implements Runnable {
      public RequestHandler(SocketService socketService, RequestParser requestParser, ConfigFromProperties config) {
         this.socketService = socketService;
         this.requestParser = requestParser;
+         this.config = config;
     }
 
     @Override
