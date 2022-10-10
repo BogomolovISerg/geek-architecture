@@ -1,5 +1,6 @@
 package ru.geekbrains;
 
+import ru.geekbrains.config.ConfigFromProperties;
 import ru.geekbrains.logger.ConsoleLogger;
 import ru.geekbrains.logger.Logger;
 
@@ -11,14 +12,19 @@ public class HttpServer {
     private static final Logger logger = new ConsoleLogger();
 
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(8088)) {
+
+        ConfigFromProperties config = new ConfigFromProperties("server.properties");
+
+        try (ServerSocket serverSocket = new ServerSocket(config.getPort())) {
             logger.info("Server started!");
+
+            RequestParser rpaster = new RequestParser();
 
             while (true) {
                 Socket socket = serverSocket.accept();
                 logger.info("New client connected!");
 
-                new Thread(new RequestHandler(new SocketService(socket))).start();
+                new Thread(new RequestHandler(new SocketService(socket),rpaster, config)).start();
             }
         } catch (IOException e) {
             e.printStackTrace();
