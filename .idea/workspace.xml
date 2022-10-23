@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd17be66-ac97-4620-ad2e-0923f6f6a01f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/config/ConfigFromProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/geek-http-server/src/main/resources/server.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/RequestParserIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/RequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/RequestParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/RequestParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/SocketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/SocketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/domain/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/domain/HttpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/domain/HttpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/geek-http-server/src/main/java/ru/geekbrains/domain/HttpResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/HttpServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/RequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/RequestParser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/SocketService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/config/ConfigFromProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/domain/HttpRequest$BuilderHttpRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/domain/HttpRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/domain/HttpResponse$BuilderHttpResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/domain/HttpResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/logger/ConsoleLogger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/ru/geekbrains/logger/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/geek-http-server/target/classes/server.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +30,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Lesson4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -55,7 +67,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18"
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "/Users/sergbogomolov/Documents/Учеба/Архитектуры и шаблоны проектирования на Java/geek-architecture-123"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -65,7 +78,7 @@
       <recent name="$PROJECT_DIR$/geek-http-server/src/main/java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HttpServer">
     <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.geekbrains.HttpServer" />
       <module name="geek-http-server" />
@@ -79,8 +92,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.geekbrains.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.geekbrains.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HttpServer" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HttpServer" />
         <item itemvalue="Application.HttpServer" />
       </list>
     </recent_temporary>
@@ -94,6 +123,8 @@
       <option name="presentableId" value="Default" />
       <updated>1665322345331</updated>
       <workItem from="1665322346616" duration="7693000" />
+      <workItem from="1665686286467" duration="1830000" />
+      <workItem from="1666547142005" duration="300000" />
     </task>
     <servers />
   </component>
@@ -105,7 +136,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Lesson3" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

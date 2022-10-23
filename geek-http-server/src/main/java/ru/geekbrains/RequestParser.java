@@ -6,8 +6,9 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequestParser{
+public class RequestParser implements RequestParserIn{
 
+    @Override
     public HttpRequest parse(Deque<String> raw){
         String[] tmp = raw.pollFirst().split(" ");
         String m = tmp[0];
